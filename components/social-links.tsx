@@ -40,7 +40,8 @@ export default function SocialLinks() {
         {socialLinks.map((social, index) => (
           <Link target="_blank" href={social.href} key={social.label}>
             <motion.div
-              className="p-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white dark:bg-[#212121] bg-white rounded-full shadow-md backdrop-blur-sm"
+              className="p-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900
+               dark:hover:text-white dark:bg-[#212121] bg-white rounded-full shadow-md backdrop-blur-sm"
               whileHover={{
                 scale: 1.2,
                 rotate: [0, -10, 10, -10, 0],

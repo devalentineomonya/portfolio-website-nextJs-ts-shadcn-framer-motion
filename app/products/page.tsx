@@ -1,7 +1,7 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { defineQuery } from "next-sanity";
 import { Products, Projects } from "@/sanity/sanity.types";
-import ProductsClient from "@/screens/products/ProductsClient";
+import ProductsClient from "@/screens/projects/products/ProductsClient";
 import { PROJECTS_QUERY } from "../page";
 
 export default async function ProductsServer() {

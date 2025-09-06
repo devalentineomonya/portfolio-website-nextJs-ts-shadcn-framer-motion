@@ -38,7 +38,9 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         </div>
         <Link
           href="/projects"
-          className="text-sm text-zinc-600 dark:bg-[#373737] border dark:border-[#424242] border-[#f0f0f0] dark:text-zinc-400 flex items-center hover:text-zinc-900 dark:hover:text-white transition-colors bg-background shadow p-2 rounded-md"
+          className="text-sm text-zinc-600 dark:bg-[#373737] border dark:border-[#424242]
+           border-[#f0f0f0] dark:text-zinc-400 flex items-center hover:text-zinc-900
+            dark:hover:text-white transition-colors bg-background shadow p-2 rounded-md"
         >
           View All
           <ChevronRight size={16} />

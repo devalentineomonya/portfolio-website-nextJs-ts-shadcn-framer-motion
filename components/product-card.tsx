@@ -18,7 +18,9 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <motion.div
-      className="bg-white  dark:bg-[#373737] border dark:border-[#424242] border-[#f0f0f0] rounded-xl p-5 cursor-pointer overflow-hidden shadow-[rgba(10,_10,_10,_0.06)_0px_1.2px_1.2px_0px,_rgba(10,_10,_10,_0.04)_0px_5px_10px_0px] "
+      className="bg-white  dark:bg-[#373737] border dark:border-[#424242] border-[#f0f0f0] rounded-xl p-5
+      hidden shadow-[rgba(10,_10,_10,_0.06)_0px_1.2px_1.2px_0px,_rgba(10,_10,_10,_0.04)_0px_5px_10px_0px]
+       cursor-pointer overflow- "
       initial={{ opacity: 0, y: 20 }}
       animate={{
         opacity: inView ? 1 : 0,
@@ -54,7 +56,8 @@ export default function ProductCard({
             </div>
           </div>
           <div className="flex items-center">
-            <span className="text-xs text-zinc-500 dark:text-zinc-300 mr-2 inline-block dark:bg-[#424242] bg-gray-100 py-1.5 px-3 rounded-full  backdrop-blur-sm truncate uppercase max-w-40">
+            <span className="text-xs text-zinc-500 dark:text-zinc-300 mr-2 inline-block dark:bg-[#424242]
+             bg-gray-100 py-1.5 px-3 rounded-full  backdrop-blur-sm truncate uppercase max-w-40">
               {product.category}
             </span>
             <motion.div
