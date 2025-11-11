@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { MainDocker } from "@/components/common/navigation/main-dock";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} mx-auto w-full my-20 max-w-3xl antialiased`}
       >
         {children}
+        <MainDocker/>
       </body>
     </html>
   );
