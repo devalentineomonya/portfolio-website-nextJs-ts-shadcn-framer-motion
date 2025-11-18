@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
@@ -13,15 +13,12 @@ const textVariant = {
       ease: "easeOut",
     },
   },
-}
+};
 
-export const MainSection = ({children}:{children:ReactNode}) => {
+export const MainSection = ({ children }: { children: ReactNode }) => {
   return (
-   <motion.section
-      initial="hidden"
-      animate="visible"
-      variants={textVariant}
-
-    >{children} </motion.section>
-  )
-}
+    <motion.section initial="hidden" animate="visible" variants={textVariant}>
+      {children}{" "}
+    </motion.section>
+  );
+};

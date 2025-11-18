@@ -6,12 +6,11 @@ export const BlogsSection = () => {
       <h2 className="mb-4 text-sm font-normal uppercase tracking-wider text-black-400 dark:text-black-400">
         LATEST BLOGS
       </h2>
-<div className="space-y-4">
-
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-</div>
+      <div className="space-y-4">
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+      </div>
     </section>
   );
 };

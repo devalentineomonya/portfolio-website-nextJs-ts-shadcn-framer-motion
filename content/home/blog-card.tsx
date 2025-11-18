@@ -1,4 +1,4 @@
-import { ArrowUpRight  } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export const BlogCard = ({
   title = "Blog Title",

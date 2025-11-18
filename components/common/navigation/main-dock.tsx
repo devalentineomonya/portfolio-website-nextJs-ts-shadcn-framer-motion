@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import React from "react"
-import Link from "next/link"
-import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react"
+import React from "react";
+import Link from "next/link";
+import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
-import { Dock, DockIcon } from "@/components/ui/dock"
+} from "@/components/ui/tooltip";
+import { Dock, DockIcon } from "@/components/ui/dock";
 
-export type IconProps = React.HTMLAttributes<SVGElement>
+export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
   calendar: (props: IconProps) => <CalendarIcon {...props} />,
@@ -59,7 +59,7 @@ const Icons = {
       ></path>
     </svg>
   ),
-}
+};
 
 const DATA = {
   navbar: [
@@ -90,12 +90,11 @@ const DATA = {
       },
     },
   },
-}
+};
 
 export function MainDocker() {
   return (
     <div className="flex flex-col items-center justify-center">
-   
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
@@ -107,7 +106,7 @@ export function MainDocker() {
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full",
                     )}
                   >
                     <item.icon className="size-4" />
@@ -129,7 +128,7 @@ export function MainDocker() {
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full",
                     )}
                   >
                     <social.icon className="size-4" />
@@ -144,5 +143,5 @@ export function MainDocker() {
         </Dock>
       </TooltipProvider>
     </div>
-  )
+  );
 }
