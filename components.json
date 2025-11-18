@@ -6,7 +6,7 @@
   "tailwind": {
     "config": "",
     "css": "app/globals.css",
-    "baseColor": "stone",
+    "baseColor": "gray",
     "cssVariables": true,
     "prefix": ""
   },
@@ -18,7 +18,5 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "registries": {
-    "@magicui": "https://magicui.design/r/{name}.json"
-  }
+  "registries": {}
 }

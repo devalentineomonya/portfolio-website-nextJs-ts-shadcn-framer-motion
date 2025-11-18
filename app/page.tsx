@@ -1,11 +1,17 @@
-import { HomeDescription } from "@/content/home/description";
-import { HomeHeader } from "@/content/home/header";
+import { BlogsSection } from "@/content/home/blogs";
+import { ExperienceSection } from "@/content/home/experienece";
+import { HomeHero } from "@/content/home/hero";
+import { ProjectsSection } from "@/content/home/projects";
+import { TechnologySection } from "@/content/home/technology";
 
-export default function HomePage(){
+export default function HomePage() {
   return (
     <>
-  <HomeHeader/>
-  <HomeDescription/>
-  </>
-  )
+      <HomeHero />
+      <ExperienceSection />
+      <ProjectsSection />
+      <TechnologySection />
+      <BlogsSection />
+    </>
+  );
 }
