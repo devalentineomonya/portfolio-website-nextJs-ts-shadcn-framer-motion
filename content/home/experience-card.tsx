@@ -63,11 +63,12 @@ export const ExperienceCard = ({
           {stack.map((iconName) => (
             <button key={iconName} data-state="closed">
               <Image
+              unoptimized
                 alt={iconName}
                 width={16}
                 height={16}
                 src={`https://cdn.simpleicons.org/${iconName}/${
-                  theme === "dark" ? "#ffffff" : "#000000"
+                  theme === "dark" ? "ffffff" : "0a0a0a0"
                 }`}
                 className="size-4 text-black-400 dark:text-black-400"
               />

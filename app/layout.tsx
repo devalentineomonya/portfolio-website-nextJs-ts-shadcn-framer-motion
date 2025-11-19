@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { MainDocker } from "@/components/common/navigation/main-dock";
+import { SmoothCursor } from "@/components/ui/smooth-cursor"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,16 +28,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-white text-black dark:bg-black relative dark:text-white antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-white text-black dark:bg-black relative dark:text-white antialiased`}
       >
-        {" "}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <main className="w-full max-w-2xl mx-auto px-4 py-8">{children}</main>
+          <main className="w-full max-w-2xl mx-auto px-4 py-8 pb-24 relative z-0">
+            {children}
+          <MainDocker />
+          </main>
+          <SmoothCursor />
         </ThemeProvider>
       </body>
     </html>
