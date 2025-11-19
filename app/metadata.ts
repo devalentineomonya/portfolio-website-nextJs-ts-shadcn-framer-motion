@@ -26,7 +26,7 @@ export const rootMetaData: Metadata = {
     siteName: "Valentine Omonya",
     images: [
       {
-        url: "/og-image.png", 
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Valentine Omonya",

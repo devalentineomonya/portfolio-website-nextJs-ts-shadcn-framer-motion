@@ -2,13 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import {
-  HomeIcon,
-  MailIcon,
-  ArchiveIcon,
-  BookOpenIcon,
-
-} from "lucide-react";
+import { HomeIcon, MailIcon, ArchiveIcon, BookOpenIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -26,8 +20,8 @@ const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/contact", icon: MailIcon, label: "Contact" },
-    { href: "/archive", icon: ArchiveIcon, label: "Archive" },
-    { href: "/blog", icon: BookOpenIcon, label: "Blog" },
+    { href: "/archieve", icon: ArchiveIcon, label: "Archive" },
+    { href: "/blogs", icon: BookOpenIcon, label: "Blog" },
   ],
 };
 
@@ -53,7 +47,7 @@ export function MainDocker() {
                       aria-label={item.label}
                       className={cn(
                         buttonVariants({ variant: "ghost", size: "icon" }),
-                        "size-12 rounded-full bg-transparent hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 transition-all duration-200"
+                        "size-12 rounded-full bg-transparent hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 transition-all duration-200",
                       )}
                     >
                       <item.icon className="size-5" />
@@ -76,7 +70,10 @@ export function MainDocker() {
             <DockIcon>
               <Tooltip>
                 <TooltipTrigger asChild>
-                 <ThemeToggleButton variant="gif" url="https://media.giphy.com/media/KBbr4hHl9DSahKvInO/giphy.gif?cid=790b76112m5eeeydoe7et0cr3j3ekb1erunxozyshuhxx2vl&ep=v1_stickers_search&rid=giphy.gif&ct=s"/>
+                  <ThemeToggleButton
+                    variant="gif"
+                    url="https://media.giphy.com/media/KBbr4hHl9DSahKvInO/giphy.gif?cid=790b76112m5eeeydoe7et0cr3j3ekb1erunxozyshuhxx2vl&ep=v1_stickers_search&rid=giphy.gif&ct=s"
+                  />
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Toggle Theme</p>

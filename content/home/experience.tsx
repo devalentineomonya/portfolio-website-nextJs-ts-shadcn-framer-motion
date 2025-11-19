@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useState } from "react";
 
 const experiences = [
@@ -18,7 +18,7 @@ const experiences = [
     company: "Kirinyaga University",
     location: "Kutus, Kirinyaga, Kenya",
     description:
-      "Built and deployed a community platform with NestJS, Docker, and message queues, integrating OpenAI APIs and M-Pesa payments to support collaboration and engagement features—achieving 40% growth in active users and maintaining 99% uptime.",
+      "Built and deployed + a community platform + with NestJS, Docker, and message queues, + integrating OpenAI APIs and M-Pesa + payments  to support collaboration and engagement features—achieving + 40% growth in active users + and maintaining 99% uptime.",
     stack: ["nestjs", "docker", "openai", "stripe", "rabbitmq"],
   },
   {
@@ -29,7 +29,7 @@ const experiences = [
     company: "Teach2Give",
     location: "On-Site Attachment",
     description:
-      "Worked on full-stack projects using React and NestJS, managing code with Git and GitHub. Gained experience with Docker containers and Azure DevOps for CI/CD. Developed strong abilities in leadership, team collaboration, and technical writing.",
+      "Worked on  + full-stack projects + using React and NestJS, managing code with Git and GitHub. Gained experience with  + Docker containers and Azure DevOps for CI/CD.+ Developed strong abilities in  + leadership, team collaboration, and technical writing.",
     stack: ["react", "nestjs", "docker", "typescript", "git", "github"],
   },
   {
@@ -40,16 +40,16 @@ const experiences = [
     company: "Godan Info",
     location: "Remote Internship",
     description:
-      "Worked on frontend development with React.js and Ant Design, contributing to the Smip Users Dashboard built with NestJS, Docker, Swagger, and TypeScript. Built role-based panels, streamlined workflows (–40% approval time), and boosted engagement by 25%.",
+      "Worked on  + frontend development + with React.js and Ant Design, contributing to the  + Smip Users Dashboard built with NestJS, + Docker, Swagger, and TypeScript. Built role-based panels, streamlined workflows (–40% approval time), and  + boosted engagement by 25%.",
     stack: ["react", "antdesign", "nestjs", "docker", "swagger", "typescript"],
   },
 ];
 
-const slideInVariants = {
+const slideInVariants: Variants = {
   hidden: {
     opacity: 0,
     x: -50,
-    scale: 0.95
+    scale: 0.95,
   },
   visible: (i: number) => ({
     opacity: 1,
@@ -60,16 +60,16 @@ const slideInVariants = {
       stiffness: 100,
       damping: 15,
       delay: i * 0.15,
-      duration: 0.6
-    }
+      duration: 0.6,
+    },
   }),
   exit: {
     opacity: 0,
     x: -30,
     transition: {
-      duration: 0.3
-    }
-  }
+      duration: 0.3,
+    },
+  },
 };
 
 export const ExperienceSection = () => {

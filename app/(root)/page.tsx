@@ -13,7 +13,7 @@ export default function HomePage() {
       <ProjectsSection />
       <TechnologySection />
       <BlogsSection />
-      <SocialLinks/>
+      <SocialLinks />
     </>
   );
 }

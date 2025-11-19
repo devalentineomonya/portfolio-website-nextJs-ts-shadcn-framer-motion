@@ -11,7 +11,6 @@ interface BlogCardProps {
   readTime?: string;
   tags?: string[];
   className?: string;
-  variant?: "default" | "featured";
 }
 
 export const BlogCard = ({
@@ -22,7 +21,6 @@ export const BlogCard = ({
   readTime = "5 min read",
   tags = [],
   className = "",
-  variant = "default"
 }: BlogCardProps) => {
   const cardContent = (
     <motion.div
@@ -32,31 +30,28 @@ export const BlogCard = ({
         dark:border-zinc-800 dark:bg-zinc-900/30
         hover:shadow-md transition-all duration-300
         group cursor-pointer
-        ${variant === "featured" ? "border-l-4 border-l-blue-500" : ""}
         ${className}
       `}
       whileHover={{
         y: -4,
-        scale: 1.02
+        scale: 1.02,
       }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
     >
       <div className="flex flex-col gap-2 flex-1">
-
         <div className="flex items-center gap-3 text-xs text-muted-foreground mb-1">
           <span>{date}</span>
           <span>•</span>
           <span>{readTime}</span>
         </div>
 
-
-        <h3 className="text-md md:text-2xl font-bold bg-linear-to-br from-black from-30% to-black/50 dark:from-white dark:from-30% dark:to-white/50 bg-clip-text text-transparent mb-2"
-        >
+        <h3 className="text-md md:text-2xl font-bold bg-linear-to-br from-black from-30% to-black/50 dark:from-white dark:from-30% dark:to-white/50 bg-clip-text text-transparent ">
           {title}
         </h3>
-        <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
-
+        <p className="text-sm text-muted-foreground line-clamp-2">
+          {description}
+        </p>
 
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-1 mt-2">
@@ -77,12 +72,11 @@ export const BlogCard = ({
         )}
       </div>
 
-
       <motion.div
         className="flex items-start"
         whileHover={{
           rotate: 45,
-          color: "rgb(37, 99, 235)"
+          color: "rgb(37, 99, 235)",
         }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
       >
@@ -90,7 +84,6 @@ export const BlogCard = ({
       </motion.div>
     </motion.div>
   );
-
 
   if (href && href !== "#") {
     return (

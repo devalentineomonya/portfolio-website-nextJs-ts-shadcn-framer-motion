@@ -132,7 +132,7 @@ export const ProjectsSection = () => {
           }}
           className="w-full"
         >
-          <CarouselContent className="-ml-1 py-4" >
+          <CarouselContent className="-ml-1 py-4">
             {filteredProjects.map((project) => (
               <CarouselItem
                 key={project.id}

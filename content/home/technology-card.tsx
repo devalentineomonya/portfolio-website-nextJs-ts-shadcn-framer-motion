@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface TechnologyCardProps {
   icon: string;
@@ -11,40 +11,40 @@ interface TechnologyCardProps {
 export const TechnologyCard = ({ icon, name }: TechnologyCardProps) => {
   const { theme } = useTheme();
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     initial: {
       scale: 1,
-      y: 0
+      y: 0,
     },
     hover: {
       transition: {
         type: "spring",
         stiffness: 500,
-        damping: 25
-      }
+        damping: 25,
+      },
     },
     tap: {
-      scale: 0.95
-    }
+      scale: 0.95,
+    },
   };
 
-  const contentVariants = {
+  const contentVariants: Variants = {
     initial: { scale: 1 },
     hover: {
       scale: 1.1,
       transition: {
         type: "spring",
         stiffness: 400,
-        damping: 10
-      }
-    }
+        damping: 10,
+      },
+    },
   };
 
-  const textVariants = {
+  const textVariants: Variants = {
     initial: { scale: 1 },
     hover: {
       scale: 1.05,
-    }
+    },
   };
 
   return (
@@ -56,12 +56,10 @@ export const TechnologyCard = ({ icon, name }: TechnologyCardProps) => {
       whileTap="tap"
     >
       <div className="flex aspect-square select-none flex-col items-center justify-center p-2">
-        <motion.div
-          variants={contentVariants}
-        >
+        <motion.div variants={contentVariants}>
           <Image
-          unoptimized
-         src={icon}
+            unoptimized
+            src={icon}
             alt={name}
             width={32}
             height={32}

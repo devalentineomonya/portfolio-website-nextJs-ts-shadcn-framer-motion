@@ -14,7 +14,7 @@ const technologies = [
 ];
 
 export const TechnologySection = () => {
-  const {theme} = useTheme()
+  const { theme } = useTheme();
   return (
     <section id="technologies" className="mt-8">
       <h2 className="mb-3 text-sm font-normal uppercase tracking-wider text-black-400 dark:text-black-400">
@@ -25,12 +25,12 @@ export const TechnologySection = () => {
         {technologies.map((tech, index) => (
           <motion.div
             key={tech.key}
-            initial={{ opacity: 0, y: 20 }}p
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               delay: index * 0.1,
               duration: 0.5,
-              ease: "easeOut"
+              ease: "easeOut",
             }}
             whileHover={{
               scale: 1.05,
@@ -38,13 +38,12 @@ export const TechnologySection = () => {
               transition: {
                 type: "spring",
                 stiffness: 400,
-                damping: 25
-              }
+                damping: 25,
+              },
             }}
           >
             <TechnologyCard
-           icon={`https://cdn.simpleicons.org/${tech.key}/${theme === "dark" ? "ffffff" : "0a0a0a0"}`}
-
+              icon={`https://cdn.simpleicons.org/${tech.key}/${theme === "dark" ? "ffffff" : "000000"}`}
               name={tech.name}
             />
           </motion.div>
