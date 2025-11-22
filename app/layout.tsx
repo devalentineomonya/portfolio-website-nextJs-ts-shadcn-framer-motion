@@ -3,7 +3,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { MainDocker } from "@/components/common/navigation/main-dock";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
-import { Particles } from "@/components/ui/particles";
 import { MainHeader } from "@/components/common/partials/header";
 import { ParticlesProvider } from "@/providers/particles-provider";
 
@@ -25,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-white text-black dark:bg-black relative dark:text-white antialiased`}
       >
@@ -35,7 +34,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="w-full mx-auto px-4 py-8 pb-24 relative z-0">
+          <main className="w-full max-w-2xl mx-auto px-4 py-8 pb-24 relative z-0">
             <MainHeader />
             {children}
             <MainDocker />

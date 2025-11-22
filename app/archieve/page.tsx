@@ -1,12 +1,9 @@
-import { Folder } from "@/components/ui/folder";
-import React from "react";
+import { UnderConstruction } from "@/components/common/sections/under-construction";
 
 export default function ArchievePage() {
   return (
-    <div className="flex gap-6 mt-10 flex-wrap">
-      <Folder />
-      <Folder />
-      <Folder />
+   <div className="grow flex flex-col items-start justify-center w-full text-center">
+     <UnderConstruction/>
     </div>
   );
 }

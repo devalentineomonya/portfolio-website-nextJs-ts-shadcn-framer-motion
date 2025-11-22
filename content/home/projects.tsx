@@ -10,14 +10,13 @@ import {
 import { ProjectCard } from "./project-card";
 import { ProjectFilter } from "./project-filters";
 import { ProjectTypes } from "@/types/project";
-
-
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface ProjectSectionProps {
-  projects:ProjectTypes[]
+  projects: ProjectTypes[];
 }
 
-export const ProjectsSection = ({projects}:ProjectSectionProps) => {
+export const ProjectsSection = ({ projects }: ProjectSectionProps) => {
   const [filters, setFilters] = useState({
     search: "",
     years: [] as number[],
@@ -33,7 +32,8 @@ export const ProjectsSection = ({projects}:ProjectSectionProps) => {
           .includes(filters.search.toLowerCase());
 
       const matchesYear =
-        filters.years.length === 0 || filters.years.includes(Number(project.year));
+        filters.years.length === 0 ||
+        filters.years.includes(Number(project.year));
 
       const matchesTech =
         filters.techStacks.length === 0 ||
@@ -51,6 +51,32 @@ export const ProjectsSection = ({projects}:ProjectSectionProps) => {
     setFilters(newFilters);
   };
 
+
+  const itemVariants:Variants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 24,
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.8,
+      transition: {
+        duration: 0.2,
+      },
+    },
+  };
+
   return (
     <section className="mt-6" id="projects">
       <h2 className="text-xs mb-3 font-normal uppercase tracking-wider text-black-400 dark:text-black-400">
@@ -63,9 +89,14 @@ export const ProjectsSection = ({projects}:ProjectSectionProps) => {
       />
 
       {filteredProjects.length === 0 ? (
-        <div className="text-center py-8 text-zinc-500 dark:text-zinc-400">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="text-center py-8 text-zinc-500 dark:text-zinc-400"
+        >
           No projects found matching your filters.
-        </div>
+        </motion.div>
       ) : (
         <Carousel
           opts={{
@@ -74,22 +105,48 @@ export const ProjectsSection = ({projects}:ProjectSectionProps) => {
           className="w-full"
         >
           <CarouselContent className="-ml-1 py-4">
-            {filteredProjects.map((project) => (
-              <CarouselItem
-                key={project._id}
-                className="min-w-0 shrink-0 grow-0 pl-1 basis-11/12 md:basis-1/3"
-              >
-                <ProjectCard
-                _id={project._id}
-                  name={project.name}
-                  description={project.description}
-                  year={project.year}
-                  techStack={project.techStack}
-                  image={project.image}
-         link={project.link}
-                />
-              </CarouselItem>
-            ))}
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project) => (
+                <CarouselItem
+                  key={project._id}
+                  className="min-w-0 shrink-0 grow-0 pl-1 basis-11/12 md:basis-1/3"
+                >
+                  <motion.div
+                    layout
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={itemVariants}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                      layout: {
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                        duration: 0.6
+                      }
+                    }}
+                    whileHover={{
+                      y: -4,
+                      transition: { duration: 0.2 }
+                    }}
+                    className="h-full"
+                  >
+                    <ProjectCard
+                      _id={project._id}
+                      name={project.name}
+                      description={project.description}
+                      year={project.year}
+                      techStack={project.techStack}
+                      image={project.image}
+                      link={project.link}
+                    />
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </AnimatePresence>
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />

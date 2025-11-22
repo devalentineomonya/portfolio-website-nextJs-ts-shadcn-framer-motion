@@ -1,0 +1,8 @@
+import React from 'react'
+import Link from "next/link"
+
+export const UnderConstruction = () => {
+  return (
+<div className="pb-4 w-full" ><div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2"><Link href="/"><div className="group rounded-xl border"><div className="group relative m-1.5 aspect-video overflow-hidden rounded-lg bg-[#bfbfbf]/5"></div><p className="px-3 pb-1 text-[#eeeeee] text-left">this</p><div></div><div></div></div></Link><Link href="/"><div className="group rounded-xl border"><div className="group relative m-1.5 aspect-video overflow-hidden rounded-lg bg-[#bfbfbf]/5"></div><p className="px-3 pb-1 text-[#eeeeee] text-left">section</p><div></div><div></div></div></Link><Link href="/"><div className="group rounded-xl border"><div className="group relative m-1.5 aspect-video overflow-hidden rounded-lg bg-[#bfbfbf]/5"></div><p className="px-3 pb-1 text-[#eeeeee] text-left">is</p><div></div><div></div></div></Link><Link href="/"><div className="group rounded-xl border"><div className="group relative m-1.5 aspect-video overflow-hidden rounded-lg bg-[#bfbfbf]/5"></div><p className="px-3 pb-1 text-[#eeeeee] text-left">under</p><div></div><div></div></div></Link><Link href="/"><div className="group rounded-xl border"><div className="group relative m-1.5 aspect-video overflow-hidden rounded-lg bg-[#bfbfbf]/5"></div><p className="px-3 pb-1 text-[#eeeeee] text-left">construction</p><div></div><div></div></div></Link><Link href="/"><div className="group rounded-xl border"><div className="group relative m-1.5 aspect-video overflow-hidden rounded-lg bg-[#bfbfbf]/5"></div><p className="px-3 pb-1 text-[#eeeeee] text-left">:3</p><div></div><div></div></div></Link></div></div>
+  )
+}

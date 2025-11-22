@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { TechnologyCard } from "./technology-card";
+import { useEffect, useState } from "react";
 
 const technologies = [
   { key: "typescript", name: "TypeScript" },
@@ -15,6 +16,11 @@ const technologies = [
 
 export const TechnologySection = () => {
   const { theme } = useTheme();
+      const [color, setColor] = useState<string>(
+      )
+      useEffect(()=>{
+          setColor( ()=>theme === "dark" ? "ffffff" : "000000")
+      },[theme])
   return (
     <section id="technologies" className="mt-8">
       <h2 className="mb-3 text-sm font-normal uppercase tracking-wider text-black-400 dark:text-black-400">
@@ -43,7 +49,7 @@ export const TechnologySection = () => {
             }}
           >
             <TechnologyCard
-              icon={`https://cdn.simpleicons.org/${tech.key}/${theme === "dark" ? "ffffff" : "000000"}`}
+              icon={`https://cdn.simpleicons.org/${tech.key}/${color}`}
               name={tech.name}
             />
           </motion.div>

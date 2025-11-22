@@ -14,6 +14,7 @@ const PROJECTS_QUERY = `*[
   name,
   link,
   description,
+  techStack,
   year,
   image
 }`;

@@ -16,8 +16,6 @@ export const ProjectCard = ({
   image,
   link,
 }: ProjectTypes) => {
-  const projectLink = link;
-
   const CardContent = (
     <Card className="overflow-hidden p-0 gap-0 border-zinc-200 rounded-md bg-zinc-100/30 transition-colors backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-900/30 group hover:shadow-md">
       <div className="relative aspect-video rounded-t-md overflow-hidden">
@@ -38,7 +36,7 @@ export const ProjectCard = ({
             {description}
           </p>
           <div className="flex flex-wrap gap-1 mt-2">
-            {techStack.slice(0, 2).map((tech) => (
+            {techStack?.slice(0, 3).map((tech) => (
               <Badge
                 key={tech}
                 variant="outline"
@@ -47,12 +45,12 @@ export const ProjectCard = ({
                 {tech}
               </Badge>
             ))}
-            {techStack.length > 2 && (
+            {techStack?.length > 3 && (
               <Badge
                 variant="outline"
                 className="text-[10px] px-1.5 py-0 rounded-sm font-normal"
               >
-                +{techStack.length - 2}
+                +{techStack.length - 3}
               </Badge>
             )}
             <Badge
@@ -63,7 +61,7 @@ export const ProjectCard = ({
             </Badge>
           </div>
         </div>
-        {projectLink && (
+        {link && (
           <div className="absolute top-3 right-3">
             <div className="bg-white/80 dark:bg-black/80 rounded-full p-1.5 shadow-sm group-hover:scale-110 transition-transform">
               <ArrowUpRight className="size-3 text-black dark:text-white" />
@@ -74,18 +72,18 @@ export const ProjectCard = ({
     </Card>
   );
 
-  if (projectLink) {
+  if (link) {
     return (
-      <TiltEffect>
-        <Link
-          href={projectLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
-        >
+      <Link
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block size-full"
+      >
+          <TiltEffect>
           {CardContent}
-        </Link>
       </TiltEffect>
+        </Link>
     );
   }
 
