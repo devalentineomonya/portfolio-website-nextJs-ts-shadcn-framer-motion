@@ -1,37 +1,29 @@
 import { TiltEffect } from "@/components/ui/tilt-effect";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { ProjectTypes } from "@/types/project";
+import { urlFor } from "@/sanity/lib/image";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  year: number;
-  techStack: string[];
-  image: string;
-  demoUrl?: string;
-  codeUrl?: string;
-}
 
 export const ProjectCard = ({
-  title,
+  name,
   description,
   year,
   techStack,
   image,
-  demoUrl,
-  codeUrl,
-}: ProjectCardProps) => {
-  const projectLink = demoUrl || codeUrl;
+  link,
+}: ProjectTypes) => {
+  const projectLink = link;
 
   const CardContent = (
     <Card className="overflow-hidden p-0 gap-0 border-zinc-200 rounded-md bg-zinc-100/30 transition-colors backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-900/30 group hover:shadow-md">
       <div className="relative aspect-video rounded-t-md overflow-hidden">
         <Image
-          src={image}
-          alt={title}
+          src={urlFor(image).url()}
+          alt={name}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
           unoptimized
@@ -40,7 +32,7 @@ export const ProjectCard = ({
       <div className="p-3 flex items-start relative">
         <div className="flex-1 min-w-0">
           <h3 className="text-md font-semibold text-black dark:text-white line-clamp-1">
-            {title}
+            {name}
           </h3>
           <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1 line-clamp-2">
             {description}

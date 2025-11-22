@@ -32,5 +32,11 @@ export const projectTypes = defineType({
       type: "image",
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: "techStack",
+      type: "array",
+      of: [{ type: "string" }],
+      validation: (rule) => rule.required(),
+    }),
   ],
 });

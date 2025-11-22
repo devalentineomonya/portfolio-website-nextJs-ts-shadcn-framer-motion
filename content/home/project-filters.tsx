@@ -19,16 +19,10 @@ import { PlusCircle, X, FilterX } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Checkbox } from "@/components/ui/checkbox";
-
-interface Project {
-  id: string;
-  title: string;
-  year: number;
-  techStack: string[];
-}
+import { ProjectTypes } from "@/types/project";
 
 interface ProjectFilterProps {
-  projects: Project[];
+  projects: ProjectTypes[];
   onFiltersChange?: (filters: {
     search: string;
     years: number[];
@@ -46,9 +40,9 @@ export const ProjectFilter = ({
 
   // Extract unique years and tech stacks from projects
   const { years, techStacks } = useMemo(() => {
-    const uniqueYears = Array.from(new Set(projects.map((p) => p.year))).sort(
-      (a, b) => b - a,
-    );
+    const uniqueYears = Array.from(
+      new Set(projects.map((p) => Number(p.year)))
+    ).sort((a, b) => b - a);
     const allTechStacks = projects.flatMap((p) => p.techStack);
     const techCountMap = allTechStacks.reduce(
       (acc, tech) => {
@@ -294,7 +288,7 @@ export const ProjectFilter = ({
                           variant="secondary"
                           className="text-xs bg-zinc-200/50 dark:bg-zinc-700/50"
                         >
-                          {projects.filter((p) => p.year === year).length}
+                          {projects.filter((p) => Number(p.year) === year).length}
                         </Badge>
                       </CommandItem>
                     ))}

@@ -9,90 +9,31 @@ import {
 } from "@/components/ui/carousel";
 import { ProjectCard } from "./project-card";
 import { ProjectFilter } from "./project-filters";
+import { ProjectTypes } from "@/types/project";
 
-// Mock projects data - replace with your actual data
-const mockProjects = [
-  {
-    id: "1",
-    title: "E-commerce Platform",
-    year: 2024,
-    techStack: ["React", "Next.js", "TypeScript", "Tailwind"],
-    description: "A modern e-commerce platform with real-time inventory",
-    image: "/images/project1.jpg",
-    demoUrl: "https://demo1.com",
-    codeUrl: "https://github.com/user/project1",
-  },
-  {
-    id: "2",
-    title: "Portfolio Website",
-    year: 2023,
-    techStack: ["React", "CSS", "JavaScript"],
-    description: "Personal portfolio website with dark mode",
-    image: "/images/project2.jpg",
-    demoUrl: "https://demo2.com",
-    codeUrl: "https://github.com/user/project2",
-  },
-  {
-    id: "3",
-    title: "Task Management App",
-    year: 2024,
-    techStack: ["React", "TypeScript", "Node.js", "MongoDB"],
-    description: "Collaborative task management application",
-    image: "/images/project3.jpg",
-    demoUrl: "https://demo3.com",
-    codeUrl: "https://github.com/user/project3",
-  },
-  {
-    id: "4",
-    title: "Weather Dashboard",
-    year: 2023,
-    techStack: ["JavaScript", "API", "CSS"],
-    description: "Real-time weather forecasting dashboard",
-    image: "/images/project4.jpg",
-    demoUrl: "https://demo4.com",
-    codeUrl: "https://github.com/user/project4",
-  },
-  {
-    id: "5",
-    title: "Social Media App",
-    year: 2024,
-    techStack: ["React", "Firebase", "Tailwind", "Next.js"],
-    description: "Social media platform with real-time messaging",
-    image: "/images/project5.jpg",
-    demoUrl: "https://demo5.com",
-    codeUrl: "https://github.com/user/project5",
-  },
-];
 
-interface Project {
-  id: string;
-  title: string;
-  year: number;
-  techStack: string[];
-  description: string;
-  image: string;
-  demoUrl: string;
-  codeUrl: string;
+
+interface ProjectSectionProps {
+  projects:ProjectTypes[]
 }
 
-export const ProjectsSection = () => {
+export const ProjectsSection = ({projects}:ProjectSectionProps) => {
   const [filters, setFilters] = useState({
     search: "",
     years: [] as number[],
     techStacks: [] as string[],
   });
 
-  // Filter projects based on current filters
   const filteredProjects = useMemo(() => {
-    return mockProjects.filter((project) => {
+    return projects.filter((project) => {
       const matchesSearch =
-        project.title.toLowerCase().includes(filters.search.toLowerCase()) ||
+        project.name.toLowerCase().includes(filters.search.toLowerCase()) ||
         project.description
           .toLowerCase()
           .includes(filters.search.toLowerCase());
 
       const matchesYear =
-        filters.years.length === 0 || filters.years.includes(project.year);
+        filters.years.length === 0 || filters.years.includes(Number(project.year));
 
       const matchesTech =
         filters.techStacks.length === 0 ||
@@ -100,7 +41,7 @@ export const ProjectsSection = () => {
 
       return matchesSearch && matchesYear && matchesTech;
     });
-  }, [filters]);
+  }, [filters, projects]);
 
   const handleFiltersChange = (newFilters: {
     search: string;
@@ -117,7 +58,7 @@ export const ProjectsSection = () => {
       </h2>
 
       <ProjectFilter
-        projects={mockProjects}
+        projects={projects}
         onFiltersChange={handleFiltersChange}
       />
 
@@ -135,17 +76,17 @@ export const ProjectsSection = () => {
           <CarouselContent className="-ml-1 py-4">
             {filteredProjects.map((project) => (
               <CarouselItem
-                key={project.id}
+                key={project._id}
                 className="min-w-0 shrink-0 grow-0 pl-1 basis-11/12 md:basis-1/3"
               >
                 <ProjectCard
-                  title={project.title}
+                _id={project._id}
+                  name={project.name}
                   description={project.description}
                   year={project.year}
                   techStack={project.techStack}
                   image={project.image}
-                  demoUrl={project.demoUrl}
-                  codeUrl={project.codeUrl}
+         link={project.link}
                 />
               </CarouselItem>
             ))}
