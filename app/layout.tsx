@@ -5,6 +5,7 @@ import { MainDocker } from "@/components/common/navigation/main-dock";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { Particles } from "@/components/ui/particles";
 import { MainHeader } from "@/components/common/partials/header";
+import { ParticlesProvider } from "@/providers/particles-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,14 +40,7 @@ export default function RootLayout({
             {children}
             <MainDocker />
           </main>
-          <Particles
-            className="absolute inset-0"
-            quantity={150}
-            ease={80}
-            staticity={30}
-            color="#ffffff"
-            size={0.8}
-          />
+       <ParticlesProvider/>
           <SmoothCursor />
         </ThemeProvider>
       </body>
