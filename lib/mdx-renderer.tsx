@@ -226,7 +226,7 @@ const mdxComponents: MDXComponents = {
   ),
   img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
     <Image
-      src={props.src ?? ""}
+      src={(props.src as string) ?? ""}
       alt={props.alt ?? ""}
       width={720}
       height={400}
