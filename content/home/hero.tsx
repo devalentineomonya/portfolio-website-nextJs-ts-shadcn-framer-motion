@@ -24,23 +24,13 @@ export const HomeHero = () => {
           </h2>
 
           <p className="font-normal text-black-400 dark:text-zinc-300 text-sm md:text-sm leading-relaxed space-x-2">
-            <TextEffect
-              as="span"
-              per="word"
-              trigger={isInView}
-              delay={0.2}
-            >
+            <TextEffect as="span" per="word" trigger={isInView} delay={0.2}>
               A
             </TextEffect>
             <Highlighter action="box" color="#FF9800">
               <span className="font-bold"> Software Engineer</span>
             </Highlighter>
-            <TextEffect
-              as="span"
-              per="word"
-              trigger={isInView}
-              delay={0.2}
-            >
+            <TextEffect as="span" per="word" trigger={isInView} delay={0.2}>
               with expertise in frontend, backend, and DevOps, specializing in
               building interactive, robust, and scalable software systems.
             </TextEffect>

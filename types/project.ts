@@ -7,5 +7,5 @@ export type ProjectTypes = {
   description: string;
   year: string;
   image: SanityImageSource;
-  techStack:string[]
+  techStack: string[];
 };

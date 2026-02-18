@@ -7,7 +7,6 @@ import Link from "next/link";
 import { ProjectTypes } from "@/types/project";
 import { urlFor } from "@/sanity/lib/image";
 
-
 export const ProjectCard = ({
   name,
   description,
@@ -75,15 +74,13 @@ export const ProjectCard = ({
   if (link) {
     return (
       <Link
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block size-full"
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block size-full"
       >
-          <TiltEffect>
-          {CardContent}
-      </TiltEffect>
-        </Link>
+        <TiltEffect>{CardContent}</TiltEffect>
+      </Link>
     );
   }
 

@@ -16,11 +16,10 @@ const technologies = [
 
 export const TechnologySection = () => {
   const { theme } = useTheme();
-      const [color, setColor] = useState<string>(
-      )
-      useEffect(()=>{
-          setColor( ()=>theme === "dark" ? "ffffff" : "000000")
-      },[theme])
+  const [color, setColor] = useState<string>();
+  useEffect(() => {
+    setColor(() => (theme === "dark" ? "ffffff" : "000000"));
+  }, [theme]);
   return (
     <section id="technologies" className="mt-8">
       <h2 className="mb-3 text-sm font-normal uppercase tracking-wider text-black-400 dark:text-black-400">

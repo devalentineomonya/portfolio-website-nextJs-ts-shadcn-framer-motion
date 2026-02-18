@@ -1,0 +1,117 @@
+---
+title: "Getting Started with Server Components in React"
+description: "Learn how React Server Components work, when to use them, and how they transform the way we build modern web applications."
+date: "2026-01-28"
+author: "Valentine Omonya"
+tags: ["React", "Server Components", "Next.js", "Performance"]
+published: true
+---
+
+## What Are Server Components?
+
+React Server Components (RSC) represent a paradigm shift in how we think about building React applications. Unlike traditional client components, server components run **exclusively on the server** and send only the rendered HTML to the client.
+
+## Key Benefits
+
+### Zero Client Bundle Impact
+
+Server components don't add any JavaScript to your client bundle:
+
+```tsx
+// This component ships ZERO JS to the client
+async function BlogList() {
+  const posts = await db.query("SELECT * FROM posts");
+
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  );
+}
+```
+
+<Callout type="info" title="Bundle Size">
+  Server Components can significantly reduce your JavaScript bundle size,
+  sometimes by 30-50% for content-heavy pages.
+</Callout>
+
+### Direct Data Access
+
+Server components can access databases, file systems, and APIs directly without an intermediate API layer:
+
+```tsx
+import { readFile } from "fs/promises";
+import path from "path";
+
+async function Config() {
+  const config = JSON.parse(
+    await readFile(path.join(process.cwd(), "config.json"), "utf-8"),
+  );
+
+  return <pre>{JSON.stringify(config, null, 2)}</pre>;
+}
+```
+
+## When to Use Client Components
+
+Not everything should be a server component. Use the `"use client"` directive when you need:
+
+- **Interactivity** — Event handlers, state, effects
+- **Browser APIs** — `window`, `localStorage`, `navigator`
+- **Custom Hooks** — Hooks that use state or effects
+
+```tsx
+"use client";
+
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return <button onClick={() => setCount((c) => c + 1)}>Count: {count}</button>;
+}
+```
+
+<WarningBox title="Common Mistake">
+  Don't add `"use client"` to every component. Start with server components and
+  only add the directive when you need client-side interactivity.
+</WarningBox>
+
+## Composition Pattern
+
+The best pattern is composing server and client components together:
+
+```tsx
+// Server Component (default)
+async function PostPage({ slug }: { slug: string }) {
+  const post = await getPost(slug);
+
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <PostContent content={post.content} />
+      {/* Client component for interactivity */}
+      <LikeButton postId={post.id} />
+      <CommentSection postId={post.id} />
+    </article>
+  );
+}
+```
+
+## Conclusion
+
+Server Components are not replacing client components — they're complementing them. The key is choosing the right type for each part of your application:
+
+| Use Case           | Component Type |
+| ------------------ | -------------- |
+| Static content     | Server         |
+| Data fetching      | Server         |
+| Interactive UI     | Client         |
+| Forms with state   | Client         |
+| Heavy computations | Server         |
+
+---
+
+_Build faster with less JavaScript._

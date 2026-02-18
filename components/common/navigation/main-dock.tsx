@@ -25,28 +25,25 @@ const DATA = {
   ],
 };
 
-
-
-
 export function MainDocker() {
   return (
     <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 rounded-2xl overflow-hidden ">
       <div className="relative shadow-[inset_0_-3px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-6px_10px_#8fdfff3f]">
         {/* Background glow */}
         <div className="absolute inset-0 bg-linear-to-b from-zinc-100/20 to-zinc-200/10 dark:from-zinc-800/20 dark:to-zinc-900/10 backdrop-blur-sm rounded-2xl overflow-hidden -z-10" />
-         <span
-        className={cn(
-          "animate-gradient absolute inset-0 block h-full w-full rounded-2xl bg-linear-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-size-[300%_100%] p-px overflow-hidden"
-        )}
-        style={{
-          WebkitMask:
-            "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-          WebkitMaskComposite: "destination-out",
-          mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-          maskComposite: "subtract",
-          WebkitClipPath: "padding-box",
-        }}
-      />
+        <span
+          className={cn(
+            "animate-gradient absolute inset-0 block h-full w-full rounded-2xl bg-linear-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-size-[300%_100%] p-px overflow-hidden",
+          )}
+          style={{
+            WebkitMask:
+              "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+            WebkitMaskComposite: "destination-out",
+            mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+            maskComposite: "subtract",
+            WebkitClipPath: "padding-box",
+          }}
+        />
 
         <TooltipProvider>
           <Dock

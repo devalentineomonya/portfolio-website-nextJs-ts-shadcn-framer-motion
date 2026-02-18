@@ -120,3 +120,12 @@
     @apply bg-background dark:bg-black text-foreground;
   }
 }
+
+/* Code block theme backgrounds — One Dark / One Light */
+.prism-code {
+  background-color: #282c34 !important;
+}
+
+html:not(.dark) .prism-code {
+  background-color: #fafafa !important;
+}

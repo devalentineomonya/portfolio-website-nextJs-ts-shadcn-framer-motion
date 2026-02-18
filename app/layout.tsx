@@ -39,7 +39,7 @@ export default function RootLayout({
             {children}
             <MainDocker />
           </main>
-       <ParticlesProvider/>
+          <ParticlesProvider />
           <SmoothCursor />
         </ThemeProvider>
       </body>

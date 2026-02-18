@@ -1,0 +1,136 @@
+---
+title: "Building a Modern Blog with Next.js and MDX"
+description: "A comprehensive guide to setting up a performant, developer-friendly blogging system using Next.js, MDX, and Shiki for syntax highlighting."
+date: "2026-02-15"
+author: "Valentine Omonya"
+tags: ["Next.js", "MDX", "React", "TypeScript", "Web Development"]
+coverImage: "/og-image.png"
+published: true
+---
+
+## Introduction
+
+Building a blog that's both developer-friendly and performant has always been a challenge. With **Next.js** and **MDX**, we can create a blogging system that allows us to write in Markdown while embedding React components directly in our posts.
+
+In this guide, we'll walk through the complete setup of a modern blog system that includes:
+
+- Syntax-highlighted code blocks
+- Custom React components
+- GitHub Flavored Markdown support
+- Static site generation for maximum performance
+
+## Setting Up the Project
+
+First, let's install the necessary dependencies:
+
+```bash
+bun add gray-matter reading-time next-mdx-remote rehype-pretty-code shiki remark-gfm
+```
+
+### Project Structure
+
+Here's how we'll organize our blog content:
+
+```
+content/
+  blog/
+    my-first-post.mdx
+    another-post.mdx
+lib/
+  blog.ts
+  mdx-renderer.tsx
+app/
+  blogs/
+    [slug]/
+      page.tsx
+```
+
+## Writing MDX Content
+
+MDX lets you use JSX in your markdown content. You can import components, and even write them inline. Here's an example:
+
+<Callout type="info" title="Why MDX?">
+  MDX combines the simplicity of Markdown with the power of React components,
+  making it perfect for technical blog posts that need interactive elements.
+</Callout>
+
+### Code Blocks with Syntax Highlighting
+
+Code blocks are automatically syntax-highlighted using Shiki. Here's an example:
+
+```typescript
+interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  tags: string[];
+}
+
+function getAllPosts(): BlogPost[] {
+  const files = fs.readdirSync(BLOG_DIR);
+  return files
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => parsePost(file))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+```
+
+### Tables
+
+Tables are supported through GitHub Flavored Markdown:
+
+| Feature             | Status | Notes                     |
+| ------------------- | ------ | ------------------------- |
+| Syntax Highlighting | Yes    | Powered by Shiki          |
+| Copy Button         | Yes    | One-click code copying    |
+| Dark/Light Theme    | Yes    | Automatic theme switching |
+| Custom Components   | Yes    | MDX component embedding   |
+
+### Task Lists
+
+- [x] Set up Next.js project
+- [x] Configure MDX processing
+- [x] Add syntax highlighting
+- [ ] Deploy to production
+- [ ] Add search functionality
+
+## Custom Components
+
+<WarningBox title="Important Note">
+  Always test your MDX components in both light and dark modes to ensure they
+  look great in all themes.
+</WarningBox>
+
+### Using Callouts
+
+Callouts help draw attention to important information:
+
+<Callout type="tip" title="Pro Tip">
+  You can use the `Callout` component with different types: `info`, `warning`,
+  `danger`, `tip`, and `success`.
+</Callout>
+
+## Performance Considerations
+
+When building a blog with Next.js, keep these tips in mind:
+
+1. **Use Static Generation** — Blog posts rarely change, so use `generateStaticParams` to build pages at compile time.
+2. **Optimize Images** — Use `next/image` for automatic image optimization.
+3. **Minimize Client JavaScript** — Keep your MDX components server-rendered when possible.
+
+> "The best code is the code that doesn't need to run on the client."
+> — A wise developer
+
+## Conclusion
+
+With this setup, you have a powerful blogging system that's:
+
+- **Fast** — Statically generated pages
+- **Flexible** — Embed any React component
+- **Developer-friendly** — Write in Markdown
+- **Beautiful** — Syntax highlighting and custom styling
+
+---
+
+_Happy blogging._

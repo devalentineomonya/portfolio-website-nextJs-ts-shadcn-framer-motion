@@ -19,15 +19,13 @@ const PROJECTS_QUERY = `*[
   image
 }`;
 
-
-
-  export default async function HomePage() {
+export default async function HomePage() {
   const projects = await client.fetch<ProjectTypes[]>(PROJECTS_QUERY);
   return (
     <>
       <HomeHero />
       <ExperienceSection />
-      <ProjectsSection projects={projects}/>
+      <ProjectsSection projects={projects} />
       <TechnologySection />
       <BlogsSection />
       <SocialLinks />

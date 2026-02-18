@@ -18,6 +18,11 @@ export const rootMetaData: Metadata = {
   manifest: "/manifest.json",
   metadataBase: new URL("https://v5.valentinee.dev"),
   robots: "index, follow",
+  alternates: {
+    types: {
+      "application/rss+xml": "https://v5.valentinee.dev/rss.xml",
+    },
+  },
   openGraph: {
     title: "Valentine Omonya | Software Engineer",
     description:

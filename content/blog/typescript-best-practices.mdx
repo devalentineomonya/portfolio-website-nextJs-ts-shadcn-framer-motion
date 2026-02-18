@@ -1,0 +1,110 @@
+---
+title: "TypeScript Best Practices for 2026"
+description: "Essential TypeScript patterns and practices every developer should know to write cleaner, safer, and more maintainable code."
+date: "2026-02-10"
+author: "Valentine Omonya"
+tags: ["TypeScript", "Best Practices", "Programming"]
+published: true
+---
+
+## Introduction
+
+TypeScript continues to evolve and improve. Here are the best practices every developer should follow in 2026 to write better TypeScript code.
+
+## Use Strict Mode
+
+Always enable strict mode in your `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true
+  }
+}
+```
+
+<Callout type="tip" title="Quick Tip">
+  Strict mode catches many common bugs at compile time, saving you hours of
+  debugging.
+</Callout>
+
+## Prefer `unknown` Over `any`
+
+Instead of using `any`, prefer `unknown` for values with an uncertain type:
+
+```typescript
+// Bad - no type safety
+function processInput(input: any) {
+  input.toUpperCase(); // No error, but might crash at runtime
+}
+
+// Good - forces type checking
+function processInput(input: unknown) {
+  if (typeof input === "string") {
+    input.toUpperCase(); // Safe!
+  }
+}
+```
+
+## Use Discriminated Unions
+
+Discriminated unions are powerful for modeling state:
+
+```typescript
+type AsyncState<T> =
+  | { status: 'idle' }
+  | { status: 'loading' }
+  | { status: 'success'; data: T }
+  | { status: 'error'; error: Error };
+
+function handleState(state: AsyncState<User>) {
+  switch (state.status) {
+    case 'idle':
+      return <Placeholder />;
+    case 'loading':
+      return <Spinner />;
+    case 'success':
+      return <UserProfile user={state.data} />;
+    case 'error':
+      return <ErrorMessage error={state.error} />;
+  }
+}
+```
+
+## Template Literal Types
+
+Template literal types enable powerful string manipulation at the type level:
+
+```typescript
+type EventName = "click" | "focus" | "blur";
+type EventHandler = `on${Capitalize<EventName>}`;
+// Result: "onClick" | "onFocus" | "onBlur"
+```
+
+## Use `satisfies` Operator
+
+The `satisfies` operator ensures a value matches a type while preserving its literal type:
+
+```typescript
+const config = {
+  port: 3000,
+  host: "localhost",
+  debug: true,
+} satisfies Record<string, string | number | boolean>;
+
+// config.port is narrowed to `number`, not `string | number | boolean`
+```
+
+## Conclusion
+
+Following these TypeScript best practices will help you write code that is:
+
+- More **type-safe** and catches bugs early
+- More **readable** for your team
+- More **maintainable** in the long run
+
+---
+
+_Keep coding safely._

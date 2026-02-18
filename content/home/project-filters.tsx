@@ -41,7 +41,7 @@ export const ProjectFilter = ({
   // Extract unique years and tech stacks from projects
   const { years, techStacks } = useMemo(() => {
     const uniqueYears = Array.from(
-      new Set(projects.map((p) => Number(p.year)))
+      new Set(projects.map((p) => Number(p.year))),
     ).sort((a, b) => b - a);
     const allTechStacks = projects.flatMap((p) => p.techStack);
     const techCountMap = allTechStacks.reduce(
@@ -288,7 +288,10 @@ export const ProjectFilter = ({
                           variant="secondary"
                           className="text-xs bg-zinc-200/50 dark:bg-zinc-700/50"
                         >
-                          {projects.filter((p) => Number(p.year) === year).length}
+                          {
+                            projects.filter((p) => Number(p.year) === year)
+                              .length
+                          }
                         </Badge>
                       </CommandItem>
                     ))}

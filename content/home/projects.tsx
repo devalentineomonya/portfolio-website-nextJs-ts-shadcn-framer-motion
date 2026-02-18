@@ -51,12 +51,11 @@ export const ProjectsSection = ({ projects }: ProjectSectionProps) => {
     setFilters(newFilters);
   };
 
-
-  const itemVariants:Variants = {
+  const itemVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 20,
-      scale: 0.95
+      scale: 0.95,
     },
     visible: {
       opacity: 1,
@@ -125,12 +124,12 @@ export const ProjectsSection = ({ projects }: ProjectSectionProps) => {
                         type: "spring",
                         stiffness: 300,
                         damping: 30,
-                        duration: 0.6
-                      }
+                        duration: 0.6,
+                      },
                     }}
                     whileHover={{
                       y: -4,
-                      transition: { duration: 0.2 }
+                      transition: { duration: 0.2 },
                     }}
                     className="h-full"
                   >
