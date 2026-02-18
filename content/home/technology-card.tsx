@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
-import { useTheme } from "next-themes";
 import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 
 interface TechnologyCardProps {
   icon: string;
@@ -9,8 +8,6 @@ interface TechnologyCardProps {
 }
 
 export const TechnologyCard = ({ icon, name }: TechnologyCardProps) => {
-  const { theme } = useTheme();
-
   const cardVariants: Variants = {
     initial: {
       scale: 1,

@@ -1,7 +1,7 @@
 "use client";
-import { type JSX } from "react";
-import { motion, Transition } from "motion/react";
 import { cn } from "@/lib/utils";
+import { motion, Transition } from "motion/react";
+import React, { type JSX } from "react";
 
 export type TextShimmerWaveProps = {
   children: string;
@@ -17,6 +17,21 @@ export type TextShimmerWaveProps = {
   transition?: Transition;
 };
 
+const shimmerMotionCache = new Map<
+  React.ElementType,
+  ReturnType<typeof motion.create>
+>();
+
+function getShimmerMotionComponent(Component: React.ElementType) {
+  if (!shimmerMotionCache.has(Component)) {
+    shimmerMotionCache.set(
+      Component,
+      motion.create(Component as keyof JSX.IntrinsicElements),
+    );
+  }
+  return shimmerMotionCache.get(Component)!;
+}
+
 export function TextShimmerWave({
   children,
   as: Component = "p",
@@ -30,9 +45,7 @@ export function TextShimmerWave({
   rotateYDistance = 10,
   transition,
 }: TextShimmerWaveProps) {
-  const MotionComponent = motion.create(
-    Component as keyof JSX.IntrinsicElements,
-  );
+  const MotionComponent = getShimmerMotionComponent(Component);
 
   return (
     <MotionComponent

@@ -49,31 +49,32 @@ export async function generateMetadata({
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
 
+  let post;
   try {
-    const post = getBlogBySlug(slug);
-
-    if (!post.frontmatter.published) {
-      notFound();
-    }
-
-    return (
-      <div className="grow w-full">
-        <BlogHeader
-          title={post.frontmatter.title}
-          date={post.frontmatter.date}
-          author={post.frontmatter.author}
-          readingTime={post.readingTime}
-          tags={post.frontmatter.tags}
-        />
-
-        <TableOfContents />
-
-        <article className="w-full max-w-none">
-          <MDXRenderer source={post.content} />
-        </article>
-      </div>
-    );
+    post = getBlogBySlug(slug);
   } catch {
     notFound();
   }
+
+  if (!post.frontmatter.published) {
+    notFound();
+  }
+
+  return (
+    <div className="grow w-full">
+      <BlogHeader
+        title={post.frontmatter.title}
+        date={post.frontmatter.date}
+        author={post.frontmatter.author}
+        readingTime={post.readingTime}
+        tags={post.frontmatter.tags}
+      />
+
+      <TableOfContents />
+
+      <article className="w-full max-w-none">
+        <MDXRenderer source={post.content} />
+      </article>
+    </div>
+  );
 }

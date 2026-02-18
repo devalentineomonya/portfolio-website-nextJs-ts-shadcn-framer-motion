@@ -1,14 +1,14 @@
 "use client";
 import { Particles } from "@/components/ui/particles";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 
 export const ParticlesProvider = () => {
   const { theme } = useTheme();
-  const [color, setColor] = useState<string>();
-  useEffect(() => {
-    setColor(() => (theme === "dark" ? "#ffffff" : "#131317"));
-  }, [theme]);
+  const color = useMemo(
+    () => (theme === "dark" ? "#ffffff" : "#131317"),
+    [theme],
+  );
   return (
     <Particles
       className="fixed inset-0 pointer-events-none"

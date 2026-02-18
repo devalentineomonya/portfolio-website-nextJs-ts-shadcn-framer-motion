@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { List } from "lucide-react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface TOCItem {
   id: string;
@@ -24,7 +24,6 @@ export function TableOfContents() {
       text: el.textContent ?? "",
       level: Number(el.tagName.charAt(1)),
     }));
-    setHeadings(items);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -36,6 +35,11 @@ export function TableOfContents() {
       },
       { rootMargin: "-80px 0px -80% 0px" },
     );
+
+    // Use startTransition to batch the state update
+    React.startTransition(() => {
+      setHeadings(items);
+    });
 
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
