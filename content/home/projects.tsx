@@ -1,16 +1,16 @@
 "use client";
-import { useState, useMemo } from "react";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
 } from "@/components/ui/carousel";
+import { ProjectTypes } from "@/types/project";
+import { AnimatePresence, motion, Variants } from "framer-motion";
+import { useMemo, useState } from "react";
 import { ProjectCard } from "./project-card";
 import { ProjectFilter } from "./project-filters";
-import { ProjectTypes } from "@/types/project";
-import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface ProjectSectionProps {
   projects: ProjectTypes[];
@@ -103,12 +103,12 @@ export const ProjectsSection = ({ projects }: ProjectSectionProps) => {
           }}
           className="w-full"
         >
-          <CarouselContent className="-ml-1 py-4">
+          <CarouselContent className="-ml-2 py-5">
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project) => (
                 <CarouselItem
                   key={project._id}
-                  className="min-w-0 shrink-0 grow-0 pl-1 basis-11/12 md:basis-1/3"
+                  className="min-w-0 shrink-0 grow-0 pl-2 basis-11/12 md:basis-1/2 lg:basis-1/3"
                 >
                   <motion.div
                     layout

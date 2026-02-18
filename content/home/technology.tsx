@@ -26,7 +26,7 @@ export const TechnologySection = () => {
         TECHNOLOGIES
       </h2>
 
-      <div className="grid grid-cols-4 gap-1 sm:grid-cols-6 md:grid-cols-7">
+      <div className="grid grid-cols-4 gap-3 sm:grid-cols-6 md:grid-cols-7">
         {technologies.map((tech, index) => (
           <motion.div
             key={tech.key}
