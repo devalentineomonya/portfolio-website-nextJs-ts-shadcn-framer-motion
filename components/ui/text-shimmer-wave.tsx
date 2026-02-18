@@ -49,12 +49,6 @@ export function TextShimmerWave({
 
   return (
     <MotionComponent
-      className={cn(
-        "relative inline-block perspective-normal",
-        "[--base-color:#a1a1aa] [--base-gradient-color:#000]",
-        "dark:[--base-color:#71717a] dark:[--base-gradient-color:#ffffff]",
-        className,
-      )}
       style={{ color: "var(--base-color)" }}
     >
       {children.split("").map((char, i) => {

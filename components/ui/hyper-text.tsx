@@ -32,10 +32,7 @@ const DEFAULT_CHARACTER_SET = Object.freeze(
 
 const getRandomInt = (max: number): number => Math.floor(Math.random() * max);
 
-const motionComponentCache = new Map<
-  React.ElementType,
-  ReturnType<typeof motion.create>
->();
+const motionComponentCache = new Map<React.ElementType, ReturnType<typeof motion.create>>();
 
 function getMotionComponent(Component: React.ElementType) {
   if (!motionComponentCache.has(Component)) {
@@ -140,9 +137,6 @@ export function HyperText({
 
   return (
     <MotionComponent
-      ref={elementRef}
-      className={cn("overflow-hidden py-2 text-4xl font-bold", className)}
-      onMouseEnter={handleAnimationTrigger}
       {...props}
     >
       <AnimatePresence>
