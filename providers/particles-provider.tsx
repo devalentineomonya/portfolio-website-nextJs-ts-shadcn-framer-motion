@@ -12,7 +12,7 @@ export const ParticlesProvider = () => {
   return (
     <Particles
       className="fixed inset-0 pointer-events-none"
-      quantity={400}
+      quantity={300}
       ease={80}
       staticity={15}
       color={color}
