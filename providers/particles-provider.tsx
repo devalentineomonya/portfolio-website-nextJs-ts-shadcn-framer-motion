@@ -11,13 +11,14 @@ export const ParticlesProvider = () => {
   const isSmallDesktop = useScreenSize(1024);
   const isMediumDesktop = useScreenSize(1440);
 
-  const quantity = useMemo(() => {
-    if (isMobile) return 50;
-    if (isTablet) return 100;
-    if (isSmallDesktop) return 150;
-    if (isMediumDesktop) return 200;
-    return 300;
-  }, [isMobile, isTablet, isSmallDesktop, isMediumDesktop]);
+    const quantity = useMemo(() => {
+      if (isMobile) return 20;
+      if (isTablet) return 35;
+      if (isSmallDesktop) return 45;
+      if (isMediumDesktop) return 55;
+      return 70;
+    }, [isMobile, isTablet, isSmallDesktop, isMediumDesktop]);
+
 
   const color = useMemo(
     () => (theme === "dark" ? "#ffffff" : "#131317"),
