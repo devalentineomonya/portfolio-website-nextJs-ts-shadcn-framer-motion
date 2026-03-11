@@ -5,23 +5,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   const paths = [
-    { path: "/", priority: 1, changeFrequency: "monthly" as "monthly" },
-    { path: "/about", priority: 0.8, changeFrequency: "monthly" as "monthly" },
-    { path: "/shop", priority: 0.9, changeFrequency: "weekly" as "weekly" },
+    { path: "/", priority: 1, changeFrequency: "monthly" as const },
+    { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/shop", priority: 0.9, changeFrequency: "weekly" as const },
     {
       path: "/contact",
       priority: 0.7,
-      changeFrequency: "monthly" as "monthly",
+      changeFrequency: "monthly" as const
     },
     {
       path: "/changelogs",
       priority: 0.6,
-      changeFrequency: "monthly" as "monthly",
+      changeFrequency: "monthly" as const
     },
-    { path: "/books", priority: 0.6, changeFrequency: "monthly" as "monthly" },
-    { path: "/tools", priority: 0.5, changeFrequency: "monthly" as "monthly" },
-    { path: "/resume", priority: 0.5, changeFrequency: "yearly" as "yearly" },
-    { path: "/cart", priority: 0.4, changeFrequency: "weekly" as "weekly" },
+    { path: "/books", priority: 0.6, changeFrequency: "monthly" as const },
+    { path: "/tools", priority: 0.5, changeFrequency: "monthly" as const },
+    { path: "/resume", priority: 0.5, changeFrequency: "yearly" as const },
+    { path: "/cart", priority: 0.4, changeFrequency: "weekly" as const },
   ];
 
   return paths.map(({ path, priority, changeFrequency }) => ({
