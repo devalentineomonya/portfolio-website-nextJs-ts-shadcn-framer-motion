@@ -29,9 +29,8 @@ const ShopClient: React.FC<{ products: Product[] }> = ({ products }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredSortedProducts = useMemo(() => {
-
     const filtered = products.filter((product) =>
-      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()),
     );
 
     return filtered.sort((a, b) => {
@@ -118,10 +117,10 @@ const ShopClient: React.FC<{ products: Product[] }> = ({ products }) => {
             <motion.div
               key={product.slug.current}
               variants={itemVariants}
-              layout 
+              layout
             >
               <ProductCard
-              sizes={product.sizes}
+                sizes={product.sizes}
                 price={product.price}
                 name={product.name}
                 slug={product.slug}

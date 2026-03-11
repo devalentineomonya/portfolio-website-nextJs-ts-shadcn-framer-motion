@@ -17,7 +17,7 @@ const PRODUCTS_QUERY = `
 
 export default async function TechShirtsCollection() {
   const products = await client.fetch<Product[]>(PRODUCTS_QUERY);
-  console.log(products)
+  console.log(products);
 
   return (
     <div className="min-h-screen my-16 px-4">

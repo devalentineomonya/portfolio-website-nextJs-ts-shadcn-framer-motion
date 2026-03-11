@@ -16,7 +16,7 @@ export function CartIndicator({ className }: CartIndicatorProps) {
       href="/cart"
       className={cn(
         "transition-colors  hover:text-black dark:hover:text-white",
-        className
+        className,
       )}
     >
       <Button size="icon" variant="ghost" className="relative">

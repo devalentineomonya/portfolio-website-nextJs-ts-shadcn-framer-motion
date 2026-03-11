@@ -25,8 +25,8 @@ const BooksClient: React.FC<BooksClientProps> = ({ books }) => {
     (book) =>
       selectedLevel === "all" ||
       book.level.includes(
-        selectedLevel as "beginner" | "intermediate" | "advanced"
-      )
+        selectedLevel as "beginner" | "intermediate" | "advanced",
+      ),
   );
 
   return (
@@ -40,7 +40,7 @@ const BooksClient: React.FC<BooksClientProps> = ({ books }) => {
             onValueChange={(value) =>
               setSelectedLevel(
                 (value as "all" | "beginner" | "intermediate" | "advanced") ||
-                  "all"
+                  "all",
               )
             }
           >

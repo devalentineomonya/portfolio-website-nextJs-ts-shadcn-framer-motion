@@ -340,7 +340,7 @@ export function OrderConfirmationClient({ data }: { data: OrderData }) {
   const total =
     data.cartItems.reduce(
       (sum, item) => sum + (item.price || 0) * (item.quantity || 0),
-      0
+      0,
     ) || 0;
 
   return (
@@ -377,7 +377,7 @@ export function OrderConfirmationClient({ data }: { data: OrderData }) {
 export function OrderNotificationAdmin({ data }: { data: OrderData }) {
   const total = data.cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0
+    0,
   );
 
   return (

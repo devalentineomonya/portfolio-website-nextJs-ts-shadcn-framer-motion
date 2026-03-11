@@ -26,7 +26,7 @@ const NavbarMobile: React.FC<NavbarMobileProps> = ({
         <SheetHeader className="px-0 py-2">
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
-        <nav >
+        <nav>
           <ul className="flex flex-col gap-y-4">
             {navigationLinks.map((link, index) => (
               <li
@@ -34,12 +34,12 @@ const NavbarMobile: React.FC<NavbarMobileProps> = ({
                 className={cn(
                   pathName === link.href
                     ? "text-foreground"
-                    : "text-muted-foreground"
+                    : "text-muted-foreground",
                 )}
               >
                 <Link
                   className={cn(
-                    "transition-colors  hover:text-black dark:hover:text-white"
+                    "transition-colors  hover:text-black dark:hover:text-white",
                   )}
                   href={link.href}
                 >

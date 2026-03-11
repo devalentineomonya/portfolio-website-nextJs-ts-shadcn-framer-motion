@@ -14,7 +14,10 @@ const NotFound = () => {
         title="Go Back"
       >
         <Link href="/">
-          <Button variant="outline" className="hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 gap-2 bg-transparent">
+          <Button
+            variant="outline"
+            className="hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 gap-2 bg-transparent"
+          >
             <ChevronLeft className="size-4" />
             <span className="text-muted-foreground">Back to Home</span>
           </Button>

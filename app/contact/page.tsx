@@ -66,7 +66,7 @@ export default function ContactPage() {
           toast.error("Please check your form and try again.");
         } else {
           toast.error(
-            result.message || "Something went wrong. Please try again."
+            result.message || "Something went wrong. Please try again.",
           );
         }
         return;
@@ -75,13 +75,13 @@ export default function ContactPage() {
       console.log("Form submitted successfully:", result);
       toast.success(
         result.message ||
-          "Message sent successfully! We'll get back to you as soon as possible."
+          "Message sent successfully! We'll get back to you as soon as possible.",
       );
       form.reset();
     } catch (error) {
       console.error("Network error:", error);
       toast.error(
-        "Network error. Your message could not be sent. Please check your connection and try again."
+        "Network error. Your message could not be sent. Please check your connection and try again.",
       );
     } finally {
       setIsSubmitting(false);

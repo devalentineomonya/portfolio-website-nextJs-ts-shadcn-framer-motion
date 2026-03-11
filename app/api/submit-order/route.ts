@@ -18,7 +18,7 @@ const OrderSchema = z.object({
         name: z.string(),
         image: z.string(),
         size: z.string(),
-      })
+      }),
     )
     .nonempty("Cart must contain at least one item"),
   email: z.string().email(),
@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
           message: "Validation failed",
           errors: validation.error.errors,
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
         success: false,
         message: "Failed to process order. Please try again later.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

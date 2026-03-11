@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {Link2} from "lucide-react"
+import { Link2 } from "lucide-react";
 import { socialLinks } from "@/lib/constants";
 
 const SocialLinks = () => {
@@ -14,8 +14,6 @@ const SocialLinks = () => {
       setShowIcons(false);
     }, 10000);
   };
-
-
 
   return (
     <div className="border-t py-2 flex justify-between items-center mt-5">
@@ -29,7 +27,7 @@ const SocialLinks = () => {
               key={link.name}
             >
               <Link href={link.href} target="_blank" rel="noopener noreferrer">
-                {<link.icon/>}
+                {<link.icon />}
               </Link>
             </Button>
           ))}

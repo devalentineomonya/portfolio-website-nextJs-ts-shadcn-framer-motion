@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { personalFavorites } from "@/lib/constants";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -19,14 +19,14 @@ const containerVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      when: "beforeChildren"
-    }
-  }
+      when: "beforeChildren",
+    },
+  },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
+  visible: { opacity: 1, y: 0 },
 };
 
 const About = () => {
@@ -87,17 +87,18 @@ const About = () => {
                 <motion.div variants={itemVariants} className="space-y-4">
                   <p className="text-lg">
                     I’m a Software Engineer with a strong focus on backend
-                    development, experienced in building scalable systems and APIs
-                    using technologies like Go, PostgreSQL, and Docker. With
-                    around 2 years of hands-on experience, I’m passionate about
-                    crafting robust server-side logic, optimizing performance, and
-                    solving complex architectural challenges.
+                    development, experienced in building scalable systems and
+                    APIs using technologies like Go, PostgreSQL, and Docker.
+                    With around 2 years of hands-on experience, I’m passionate
+                    about crafting robust server-side logic, optimizing
+                    performance, and solving complex architectural challenges.
                   </p>
                   <p className="text-lg">
-                    Outside of coding, I enjoy sharing insights through technical
-                    writing and collaborating with developer communities to help
-                    others deepen their understanding of system design, real-time
-                    communication, and backend best practices.
+                    Outside of coding, I enjoy sharing insights through
+                    technical writing and collaborating with developer
+                    communities to help others deepen their understanding of
+                    system design, real-time communication, and backend best
+                    practices.
                   </p>
                 </motion.div>
 
@@ -145,7 +146,9 @@ const About = () => {
                   Software Engineering Attaché
                 </h3>
                 <p className="text-muted-foreground">Teach2Give • Kirinyaga</p>
-                <p className="text-sm text-muted-foreground">May 2025 - Present</p>
+                <p className="text-sm text-muted-foreground">
+                  May 2025 - Present
+                </p>
               </motion.div>
               <hr className="mt-5" />
               <Accordion type="single" collapsible>
@@ -167,7 +170,9 @@ const About = () => {
                           <h3 className="text-lg font-semibold flex items-center">
                             Front-end Developer
                           </h3>
-                          <p className="text-muted-foreground">GodanInfo • Remote</p>
+                          <p className="text-muted-foreground">
+                            GodanInfo • Remote
+                          </p>
                           <p className="text-sm text-muted-foreground">
                             Jan 2025 - April 2025
                           </p>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { navigationLinks, socialLinks } from "@/lib/constants";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Footer() {
   const pathName = usePathname();
@@ -10,12 +11,12 @@ export default function Footer() {
     <footer
       className={cn(
         "bg-white py-32 dark:bg-transparent",
-        pathName === "/" && "hidden"
+        pathName === "/" && "hidden",
       )}
     >
       <div className="mx-auto max-w-6xl px-4">
         <Link href="" aria-label="go home" className="mx-auto block size-fit">
-          <img className="size-8" src="/logo.png" />
+          <Image className="size-8" alt="Footer logo" src="/logo.png" />
         </Link>
 
         <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
@@ -23,7 +24,7 @@ export default function Footer() {
             <Link
               key={link.href}
               className={cn(
-                "transition-colors  hover:text-black dark:hover:text-white"
+                "transition-colors  hover:text-black dark:hover:text-white",
               )}
               href={link.href}
             >

@@ -19,13 +19,13 @@ const ProductClient: React.FC<{ product: Product }> = ({ product }) => {
 
   const cartItem = items.find(
     (item) =>
-      item.productId === product.slug.current && item.size === selectedSize
+      item.productId === product.slug.current && item.size === selectedSize,
   );
   const quantity = cartItem?.quantity || 0;
   useEffect(() => {
     if (product.sizes && product.sizes.length > 0) {
       const existingCartItem = items.find(
-        (item) => item.productId === product.slug.current
+        (item) => item.productId === product.slug.current,
       );
 
       if (existingCartItem) {
@@ -41,7 +41,7 @@ const ProductClient: React.FC<{ product: Product }> = ({ product }) => {
 
     const previousCartItem = items.find(
       (item) =>
-        item.productId === product.slug.current && item.size === selectedSize
+        item.productId === product.slug.current && item.size === selectedSize,
     );
 
     if (previousCartItem && previousCartItem.quantity > 0) {

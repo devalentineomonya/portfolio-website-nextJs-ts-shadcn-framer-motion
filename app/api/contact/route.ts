@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
           message: "Validation failed",
           errors: validation.error.errors,
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
         success: false,
         message: "Failed to send message. Please try again later.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

@@ -11,12 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       path: "/contact",
       priority: 0.7,
-      changeFrequency: "monthly" as const
+      changeFrequency: "monthly" as const,
     },
     {
       path: "/changelogs",
       priority: 0.6,
-      changeFrequency: "monthly" as const
+      changeFrequency: "monthly" as const,
     },
     { path: "/books", priority: 0.6, changeFrequency: "monthly" as const },
     { path: "/tools", priority: 0.5, changeFrequency: "monthly" as const },

@@ -33,7 +33,7 @@ const formSchema = z.object({
       name: z.string(),
       image: z.string(),
       size: z.string(),
-    })
+    }),
   ),
   firstName: z
     .string()
@@ -65,7 +65,7 @@ export default function CartPage() {
 
   useEffect(() => {
     form.setValue("cartItems", items);
-  }, [items,form]);
+  }, [items, form]);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {

@@ -51,12 +51,12 @@ export const Navbar: React.FC = () => {
                   className={cn(
                     pathName === link.href
                       ? "text-foreground"
-                      : "text-muted-foreground"
+                      : "text-muted-foreground",
                   )}
                 >
                   <Link
                     className={cn(
-                      "transition-colors  hover:text-black dark:hover:text-white"
+                      "transition-colors  hover:text-black dark:hover:text-white",
                     )}
                     href={link.href}
                   >
@@ -68,7 +68,7 @@ export const Navbar: React.FC = () => {
                 className={cn(
                   pathName === "/cart"
                     ? "text-foreground"
-                    : "text-muted-foreground"
+                    : "text-muted-foreground",
                 )}
               >
                 <CartIndicator />

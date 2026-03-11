@@ -94,8 +94,8 @@ export default function Changelog() {
       entry.version.toLowerCase().includes(searchTerm.toLowerCase()) ||
       entry.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       entry.changes?.some((change) =>
-        change.toLowerCase().includes(searchTerm.toLowerCase())
-      )
+        change.toLowerCase().includes(searchTerm.toLowerCase()),
+      ),
   );
 
   return (

@@ -31,13 +31,13 @@ export const useCartStore = create<CartStore>()(
       addItem: (item) =>
         set((state) => {
           const existing = state.items.find(
-            (i) => i.productId === item.productId && i.size === item.size
+            (i) => i.productId === item.productId && i.size === item.size,
           );
           const newItems = existing
             ? state.items.map((i) =>
                 i.productId === item.productId && i.size === item.size
                   ? { ...i, quantity: i.quantity + 1 }
-                  : i
+                  : i,
               )
             : [...state.items, { ...item, quantity: 1 }];
 
@@ -49,7 +49,7 @@ export const useCartStore = create<CartStore>()(
       removeItem: (productId, size) =>
         set((state) => {
           const newItems = state.items.filter(
-            (i) => !(i.productId === productId && i.size === size)
+            (i) => !(i.productId === productId && i.size === size),
           );
           return {
             items: newItems,
@@ -66,7 +66,7 @@ export const useCartStore = create<CartStore>()(
           const newItems = state.items.map((i) =>
             i.productId === productId && i.size === size
               ? { ...i, quantity: i.quantity + 1 }
-              : i
+              : i,
           );
           return {
             items: newItems,
@@ -100,6 +100,6 @@ export const useCartStore = create<CartStore>()(
           total: calculateTotal(state.items),
         };
       },
-    }
-  )
+    },
+  ),
 );
