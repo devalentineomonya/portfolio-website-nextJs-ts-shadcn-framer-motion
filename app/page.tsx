@@ -241,7 +241,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <FadeUp delay={0.1}>
               <p className="font-mono text-sm leading-8 text-gray-800">
-                I am Valentine Omonya, a Software Engineer with expertise in frontend, backend, and DevOps, specializing in building interactive, robust, and scalable software systems. I thrive in fast-paced environments where performance, automation, and reliability are critical to business success.
+                I have always been interested in building systems that solve user problems across different platforms—be it web, mobile, or systems with TUIs—and I focus heavily on implementing robust business solutions.
               </p>
             </FadeUp>
             <FadeUp delay={0.2}>
