@@ -1,30 +1,30 @@
-import { MetadataRoute } from 'next'
- 
+import { MetadataRoute } from "next";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://valentinee.dev',
+      url: "https://valentinee.dev",
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 1,
     },
     {
-      url: 'https://valentinee.dev/work',
+      url: "https://valentinee.dev/work",
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: 'https://valentinee.dev/experience',
+      url: "https://valentinee.dev/experience",
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: 'https://valentinee.dev/stories',
+      url: "https://valentinee.dev/stories",
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.8,
     },
-  ]
+  ];
 }

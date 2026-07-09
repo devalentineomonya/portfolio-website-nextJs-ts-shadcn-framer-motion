@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,10 +17,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default: "Valentine Omonya | Software Engineer",
-    template: "%s | Valentine Omonya"
+    template: "%s | Valentine Omonya",
   },
-  description: "Valentine Omonya is a Software Engineer based in Kenya specializing in frontend and full-stack development, building robust business solutions and enterprise applications.",
-  keywords: ["Valentine Omonya", "Software Engineer", "Full Stack Developer", "Kenya", "React", "Next.js", "NestJS", "Portfolio"],
+  description:
+    "Valentine Omonya is a Software Engineer based in Kenya specializing in frontend and full-stack development, building robust business solutions and enterprise applications.",
+  keywords: [
+    "Valentine Omonya",
+    "Software Engineer",
+    "Full Stack Developer",
+    "Kenya",
+    "React",
+    "Next.js",
+    "NestJS",
+    "Portfolio",
+  ],
   authors: [{ name: "Valentine Omonya" }],
   creator: "Valentine Omonya",
   openGraph: {
@@ -26,13 +38,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://valentinee.dev",
     title: "Valentine Omonya | Software Engineer",
-    description: "Valentine Omonya is a Software Engineer based in Kenya specializing in frontend and full-stack development.",
+    description:
+      "Valentine Omonya is a Software Engineer based in Kenya specializing in frontend and full-stack development.",
     siteName: "Valentine Omonya Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Valentine Omonya | Software Engineer",
-    description: "Valentine Omonya is a Software Engineer based in Kenya specializing in frontend and full-stack development.",
+    description:
+      "Valentine Omonya is a Software Engineer based in Kenya specializing in frontend and full-stack development.",
     creator: "@devalentine_",
   },
 };
@@ -45,9 +59,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth bg-white text-black`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col selection:bg-black selection:text-white relative bg-white text-black font-sans">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
