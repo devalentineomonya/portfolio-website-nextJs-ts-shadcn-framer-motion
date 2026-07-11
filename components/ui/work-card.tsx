@@ -52,6 +52,7 @@ export const WorkCard = ({ project }: { project: WorkProject }) => {
             src={project.image}
             alt={project.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover grayscale contrast-[1.1] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
           />
         </div>

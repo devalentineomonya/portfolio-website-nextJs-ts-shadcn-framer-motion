@@ -11,6 +11,18 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const sections = navLinks.map((link) => document.getElementById(link.id));
       const scrollPosition = window.scrollY + 100;

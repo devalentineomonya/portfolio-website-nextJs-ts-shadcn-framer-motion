@@ -17,6 +17,7 @@ export const ProfileCard = () => (
               src={heroContent.profile.image}
               alt={heroContent.profile.name}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover object-center grayscale contrast-[1.1] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
             />
           </div>

@@ -29,16 +29,16 @@ export const Button = (props: ButtonProps) => {
   const dots = (
     <>
       <span
-        className={`absolute top-0 left-0 w-1.5 h-1.5 transition-colors duration-300 ease-in-out z-10 ${isBlack ? "bg-white group-hover:!bg-black" : "bg-black group-hover:!bg-white"}`}
+        className={`absolute -top-[1px] -left-[1px] w-4 h-4 border-t-[3px] border-l-[3px] transition-all duration-300 ease-in-out z-10 opacity-0 group-hover:opacity-100 ${isBlack ? "border-white group-hover:!border-black" : "border-black group-hover:!border-white"}`}
       ></span>
       <span
-        className={`absolute top-0 right-0 w-1.5 h-1.5 transition-colors duration-300 ease-in-out z-10 ${isBlack ? "bg-white group-hover:!bg-black" : "bg-black group-hover:!bg-white"}`}
+        className={`absolute -top-[1px] -right-[1px] w-4 h-4 border-t-[3px] border-r-[3px] transition-all duration-300 ease-in-out z-10 opacity-0 group-hover:opacity-100 ${isBlack ? "border-white group-hover:!border-black" : "border-black group-hover:!border-white"}`}
       ></span>
       <span
-        className={`absolute bottom-0 left-0 w-1.5 h-1.5 transition-colors duration-300 ease-in-out z-10 ${isBlack ? "bg-white group-hover:!bg-black" : "bg-black group-hover:!bg-white"}`}
+        className={`absolute -bottom-[1px] -left-[1px] w-4 h-4 border-b-[3px] border-l-[3px] transition-all duration-300 ease-in-out z-10 opacity-0 group-hover:opacity-100 ${isBlack ? "border-white group-hover:!border-black" : "border-black group-hover:!border-white"}`}
       ></span>
       <span
-        className={`absolute bottom-0 right-0 w-1.5 h-1.5 transition-colors duration-300 ease-in-out z-10 ${isBlack ? "bg-white group-hover:!bg-black" : "bg-black group-hover:!bg-white"}`}
+        className={`absolute -bottom-[1px] -right-[1px] w-4 h-4 border-b-[3px] border-r-[3px] transition-all duration-300 ease-in-out z-10 opacity-0 group-hover:opacity-100 ${isBlack ? "border-white group-hover:!border-black" : "border-black group-hover:!border-white"}`}
       ></span>
     </>
   );
