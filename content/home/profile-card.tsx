@@ -37,16 +37,13 @@ export const ProfileCard = () => (
               {heroContent.profile.roles}
             </p>
 
-            <div className="mt-6 grid grid-cols-2 gap-3 border-t border-gray-200 pt-5">
-              <Button href={heroContent.links.email} variant="white">
-                EMAIL
-              </Button>
+            <div className="mt-6 border-t border-gray-200 pt-5">
               <Button
-                href={heroContent.links.resume}
-                target="_blank"
+                href={heroContent.links.email}
                 variant="black"
+                className="w-full"
               >
-                VIEW CV
+                EMAIL
               </Button>
             </div>
           </div>

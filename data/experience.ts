@@ -36,8 +36,8 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "Computer Society of Kirinyaga",
-    location: "Kutus, Kirinyaga, Kenya",
+    company: "University Computer Society",
+    location: "Kenya",
     roles: [
       {
         title: "Vice Chairperson",

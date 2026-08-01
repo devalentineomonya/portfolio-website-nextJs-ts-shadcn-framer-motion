@@ -6,12 +6,11 @@ export const heroContent = {
   profile: {
     name: "Valentine Omonya",
     location: "Nairobi",
-    image: "/valentine.png",
+    image: "/avatar.webp",
     roles: "Software Engineer, Frontend, Backend, DevOps, AI.",
   },
   links: {
     email: "mailto:contact@valentinee.dev",
-    resume: "https://v1.valentinee.dev/resume.pdf",
     work: "#work",
     stories: "#stories",
   },

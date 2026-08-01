@@ -50,13 +50,13 @@ export const workProjects: WorkProject[] = [
     technologies: ["react native", "expo", "ai"],
   },
   {
-    title: "Computer Society of Kirinyaga",
+    title: "University Computer Society",
     category: "Volunteer",
     description:
-      "The official web platform for the Computer Society of Kirinyaga, serving as a central hub for members, events, and tech community resources.",
+      "The official web platform for a university computer society, serving as a central hub for members, events, and tech community resources.",
     image:
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop",
-    url: "https://computersocietyofkirinyaga.org",
+    url: "#",
     technologies: ["next.js", "tailwind"],
   },
   {
