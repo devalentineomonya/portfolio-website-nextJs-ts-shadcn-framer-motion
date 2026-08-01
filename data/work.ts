@@ -46,7 +46,7 @@ export const workProjects: WorkProject[] = [
       "A privacy-first personal finance app that parses M-Pesa SMS messages natively to log transactions, track budgets, and provide AI spending insights.",
     image:
       "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=800&auto=format&fit=crop",
-    url: "#",
+    url: "https://journauling.valentinee.dev/",
     technologies: ["react native", "expo", "ai"],
   },
   {
@@ -56,7 +56,7 @@ export const workProjects: WorkProject[] = [
       "The official web platform for a university computer society, serving as a central hub for members, events, and tech community resources.",
     image:
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop",
-    url: "#",
+    url: "https://computersocietyofkirinyaga.org",
     technologies: ["next.js", "tailwind"],
   },
   {
