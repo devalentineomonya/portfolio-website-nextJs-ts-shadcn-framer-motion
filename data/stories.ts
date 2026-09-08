@@ -16,7 +16,7 @@ export const stories: Story[] = [
     readTime: "3 min read",
     description:
       "A comprehensive guide to setting up a performant, developer-friendly blogging system using Next.js, MDX, and Shiki for syntax highlighting.",
-    url: "https://v5.valentinee.dev/blogs/building-a-modern-blog-with-nextjs",
+    url: "https://v5.devalentine.com/blogs/building-a-modern-blog-with-nextjs",
     tags: ["Next.js", "MDX"],
   },
   {
@@ -26,7 +26,7 @@ export const stories: Story[] = [
     readTime: "2 min read",
     description:
       "Essential TypeScript patterns and practices every developer should know to write cleaner, safer, and more maintainable code.",
-    url: "https://v5.valentinee.dev/blogs/typescript-best-practices",
+    url: "https://v5.devalentine.com/blogs/typescript-best-practices",
     tags: ["TypeScript", "Best Practices"],
   },
   {

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://valentinee.dev",
+    url: "https://devalentine.com",
     title: "Valentine Omonya | Software Engineer",
     description:
       "Valentine Omonya is a Software Engineer based in Kenya specializing in frontend and full-stack development.",

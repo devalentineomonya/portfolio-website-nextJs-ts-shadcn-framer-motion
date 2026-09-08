@@ -10,7 +10,7 @@ export const heroContent = {
     roles: "Software Engineer, Frontend, Backend, DevOps, AI.",
   },
   links: {
-    email: "mailto:contact@valentinee.dev",
+    email: "mailto:contact@devalentine.com",
     work: "#work",
     stories: "#stories",
   },

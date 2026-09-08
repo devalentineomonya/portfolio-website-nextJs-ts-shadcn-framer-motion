@@ -14,10 +14,10 @@ export const socialLinks = [
     colSpan: 1,
   },
   { label: "Twitter", href: "https://x.com/devalentine_", colSpan: 1 },
-  { label: "Email", href: "mailto:contact@valentinee.dev", colSpan: 1 },
+  { label: "Email", href: "mailto:contact@devalentine.com", colSpan: 1 },
   {
     label: "Builder at companyX",
-    href: "https://studio.valentinee.dev",
+    href: "https://studio.devalentine.com",
     colSpan: 2,
   },
 ];

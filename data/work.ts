@@ -16,7 +16,7 @@ export const workProjects: WorkProject[] = [
       "An AI powered health care system with features like appointment scheduling, patient record management, reminders, medical insights.",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
-    url: "https://medic.valentinee.dev",
+    url: "https://medic.devalentine.com",
     technologies: ["react", "nestjs", "docker"],
   },
   {
@@ -26,7 +26,7 @@ export const workProjects: WorkProject[] = [
       "A dedicated brand website meticulously crafted to showcase my premium client work, technical case studies, and professional services.",
     image:
       "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop",
-    url: "https://studio.valentinee.dev",
+    url: "https://studio.devalentine.com",
     technologies: ["next.js", "react"],
   },
   {
@@ -46,7 +46,7 @@ export const workProjects: WorkProject[] = [
       "A privacy-first personal finance app that parses M-Pesa SMS messages natively to log transactions, track budgets, and provide AI spending insights.",
     image:
       "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=800&auto=format&fit=crop",
-    url: "https://journauling.valentinee.dev/",
+    url: "https://journauling.devalentine.com/",
     technologies: ["react native", "expo", "ai"],
   },
   {
@@ -76,7 +76,7 @@ export const workProjects: WorkProject[] = [
       "An interactive Performance-Based Questions (PBQ) Simulator engineered to help students prepare for complex, hands-on IT certification exams.",
     image:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
-    url: "https://pbqsimulator.vercel.app/",
+    url: "https://pbqsimulator.com/",
     technologies: ["react", "nestjs"],
   },
   {
@@ -93,7 +93,7 @@ export const workProjects: WorkProject[] = [
     title: "Shopping Cart",
     category: "Archived",
     description: "A frontend e-commerce shopping cart implementation.",
-    url: "https://shoppingcart.valentinee.dev/",
+    url: "https://shoppingcart.devalentine.com/",
     technologies: [],
     archived: true,
   },
@@ -101,7 +101,7 @@ export const workProjects: WorkProject[] = [
     title: "DevalExpenses",
     category: "Archived",
     description: "A legacy financial tracking and budgeting web application.",
-    url: "https://expenses.valentinee.dev",
+    url: "https://expenses.devalentine.com",
     technologies: [],
     archived: true,
   },
@@ -118,7 +118,7 @@ export const workProjects: WorkProject[] = [
     title: "DevalRide",
     category: "Archived",
     description: "A legacy ride-hailing platform prototype interface.",
-    url: "https://ride.valentinee.dev",
+    url: "https://ride.devalentine.com",
     technologies: [],
     archived: true,
   },

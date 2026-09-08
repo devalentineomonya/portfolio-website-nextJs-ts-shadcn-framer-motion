@@ -16,7 +16,7 @@ export const ContactSection = () => (
             opportunities, exciting new projects, or just to say hello.
           </p>
           <Button
-            href="mailto:contact@valentinee.dev"
+            href="mailto:contact@devalentine.com"
             variant="black"
             className="w-full lg:w-auto mt-2"
           >
